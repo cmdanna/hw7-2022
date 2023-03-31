@@ -65,7 +65,7 @@ document.querySelector("#skip").addEventListener("click", function () {
 	video = document.querySelector("#player1")
 	console.log("Skip ahead")
 	video.currentTime += 15
-	if (video.ended == true) {
+	if (video.currentTime > 67) {
 		video.currentTime = 0
 	}
 	time = video.currentTime
