@@ -1,5 +1,4 @@
 var video = document.querySelector("#player1");
-document.querySelector("#volume").innerHTML = "100"
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -14,6 +13,7 @@ document.querySelector("#play").addEventListener("click", function () {
 	console.log("Play Video");
 	video = document.querySelector("#player1")
 	video.play()
+	document.querySelector("#volume").innerHTML = this.value + "%"
 });
 
 document.querySelector("#pause").addEventListener("click", function () {
@@ -29,7 +29,7 @@ document.querySelector("#slider").addEventListener("change", function () {
 	vol = (this.value)/100
 	video = document.querySelector("#player1")
 	video.volume = vol*1
-	document.querySelector("#volume").innerHTML = this.value
+	document.querySelector("#volume").innerHTML = this.value + "%"
 });
 
 document.querySelector("#mute").addEventListener("click", function () {
@@ -48,7 +48,7 @@ document.querySelector("#mute").addEventListener("click", function () {
 document.querySelector("#slower").addEventListener("click", function () {
 	video = document.querySelector("#player1")
 	console.log("Video slow down")
-	video.playbackRate -= 0.05
+	video.playbackRate -= 0.1
 	rate = video.playbackRate
 	console.log("New speed is " + rate)
 });
@@ -56,7 +56,7 @@ document.querySelector("#slower").addEventListener("click", function () {
 document.querySelector("#faster").addEventListener("click", function () {
 	video = document.querySelector("#player1")
 	console.log("Video speed up")
-	video.playbackRate += 0.05
+	video.playbackRate += 0.1
 	rate = video.playbackRate
 	console.log("New speed is " + rate)
 });
